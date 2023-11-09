@@ -15,15 +15,14 @@ Google font : Montserrat
 	box-sizing: border-box;
 	list-style-type: none;
 }
-
-body {
-	display: flex;
+body{
+    background: var(--back-color-page);
+	font-family: 'Montserrat', sans-serif;
+    display: flex;
 	gap: 20px;
 	justify-content: center;
 	align-items: center;
-	min-height: 100vh;
-	background: var(--back-color-page);
-	font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
 }
 
 
