@@ -1,0 +1,167 @@
+/* -----------------------
+Google font : Montserrat
+-------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+	--back-color-page : #004348;
+	--primary-color:  #ffffff;
+	--secondary-color: #001c22;
+  }
+  
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style-type: none;
+}
+
+body {
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: var(--back-color-page);
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+.list-navigation {
+	color: #858585;
+	font-weight: 600;
+	font-size: 14px;
+	transition: 0.5s;
+}
+.navigation {
+	position: relative;
+	width: 450px;
+	height: 60px;
+	background: var(--primary-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 80px;
+}
+
+.navigation ul {
+	width: 350px;
+	display: flex;
+}
+
+
+.navigation ul li {
+	list-style: none;
+	position: relative;
+	width: 70px; /* ul: width 350 / 5 = 70 */
+	height: 60px;
+	z-index: 2;
+}
+
+.navigation ul li a {
+	text-decoration: none;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.navigation ul li a .icon {
+	position:relative;
+	background: var(--primary-color);
+	display:block;
+	width: 55px;
+	height: 55px;
+	text-align: center;
+	line-height: 65px;
+	border-radius: 65px;
+	color: #011814;
+	font-size: 1.6em;
+	transition: 0.5s;
+	transition-delay: 0s;
+}
+
+.navigation ul li.active a .icon {
+	background: var(--clr);
+	color: var(--primary-color);
+	transform: translatey(-27px);
+	transition-delay: 0.25s;
+}
+
+.navigation ul li a .icon:before {
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--clr);
+	border-radius: 50%;
+	filter: blur(5px);
+	opacity:0;
+	transition: .5s;
+	transition-delay: 0.15s;
+}
+
+.navigation ul li.active a .icon:before {
+	opacity: 0.5;
+	transition-delay: 0.25s;
+}
+
+.indicator {
+	position: absolute;
+	top: -35px;
+	width: 70px;
+	height: 70px;
+	background-color: var(--primary-color);
+	border-radius: 50%;
+	z-index: 1;
+	transition: 0.5s;
+}
+
+.indicator::before {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: -27.5px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	box-shadow: 15px 18px var(--primary-color);
+}
+
+.indicator::after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	right: -27.5px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	box-shadow: -15px 18px var(--primary-color);
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+	transform: translatex(calc(70px * 0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator {
+	transform: translatex(calc(70px * 1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator {
+	transform: translatex(calc(70px * 2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator {
+	transform: translatex(calc(70px * 3));
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator {
+	transform: translatex(calc(70px * 4));
+}
+.list:active .text{
+	display: none;
+} 
